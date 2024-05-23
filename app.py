@@ -9,6 +9,13 @@ import numpy as np
 
 from resnet_model import ResnetModel
 
+st.set_page_config(
+    page_title="AutoVision Birds Species!",
+    page_icon="🐦",
+    # layout="wide",
+    initial_sidebar_state="auto",
+)
+
 
 @st.cache_data()
 def load_model(path: str = 'models/trained_model_resnet50.pt') -> ResnetModel:
@@ -139,7 +146,7 @@ if __name__ == '__main__':
             all_image_files, image_files_subset, selected_species.upper())
         image_name = st.sidebar.selectbox("Image Name", available_images)
         if image_files_subset == 'consolidated':
-            local_key_prefix = 'consolidated/consolidated'
+            local_key_prefix = 'train'
         else:
             local_key_prefix = image_files_subset
         key_path = os.path.join(local_key_prefix, selected_species.upper(), image_name)
