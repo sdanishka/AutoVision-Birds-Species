@@ -9,6 +9,13 @@ import numpy as np
 
 from resnet_model import ResnetModel
 
+st.set_page_config(
+    page_title="AutoVision Birds Species!",
+    page_icon="🐦",
+    # layout="wide",
+    initial_sidebar_state="auto",
+)
+
 
 @st.cache_data()
 def load_model(path: str = 'models/trained_model_resnet50.pt') -> ResnetModel:
