@@ -2,8 +2,7 @@ import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torchvision import (models,
-                         transforms)
+from torchvision import models, transforms
 import copy
 from tqdm import tqdm
 import PIL
